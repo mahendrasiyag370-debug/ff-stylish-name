@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FF Stylish Name Maker - Free Fire Stylish Name 2026</title>
+<meta name="description" content="Best FF Stylish Name Maker Tool. Generate 100+ stylish Free Fire names with symbols. Copy and paste in one click.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{background:#0f0f0f;color:#fff;font-family:system-ui;text-align:center;padding:15px}
+h1{color:#ffcc00}
+input{width:90%;max-width:400px;padding:14px;border-radius:10px;border:none;font-size:18px;margin-top:10px}
+.grid{display:grid;grid-template-columns:1fr;gap:10px;max-width:500px;margin:20px auto}
+.item{background:#222;padding:14px;border-radius:10px;cursor:pointer;border:1px solid #333}
+.item:active{background:#333;transform:scale(0.98)}
+small{color:#aaa}
+</style>
+</head>
+<body>
+<h1>🔥 FF Stylish Name Maker</h1>
+<small>Free Fire Stylish Fonts - Google pe #1</small><br>
+<input id="name" placeholder="Apna naam likho... (ex: Mahendra)" oninput="make(this.value)">
+<div class="grid" id="list"></div>
+<script>
+function make(v){
+if(!v)v="FF Lover";
+let styles=[`꧁༒☬${v}☬༒꧂`,`『${v}』`,`亗 ${v} 亗`,`ᴹᴿ°${v}࿐`,`꧁${v}꧂`,`༺${v}༻`,`${v}⚔️`,`${v}乂`, `◥꧁${v}꧂◤`,`💀${v}💀`,`${v}☆`,`꧁༺${v}༻꧂`];
+let out="";styles.forEach(t=>out+=`<div class=item onclick="navigator.clipboard.writeText(this.innerText);this.innerHTML+=' ✓ Copied'">${t}</div>`);
+document.getElementById("list").innerHTML=out;
+}
+make("");
+</script>
+</body>
+</html>
