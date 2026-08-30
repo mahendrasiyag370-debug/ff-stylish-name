@@ -32,3 +32,61 @@ make("");
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 FF Stylish Name Maker</title>
+<style>
+body{background:#0f0f0f;color:white;font-family:Arial;text-align:center;padding:20px}
+h1{color:#ffcc00}
+input{width:90%;max-width:400px;padding:12px;border-radius:10px;border:none;font-size:18px;margin:15px 0}
+.box{background:#222;padding:12px;margin:10px auto;border-radius:10px;max-width:500px;font-size:20px;cursor:pointer}
+.box:active{background:#333}
+</style>
+</head>
+<body>
+<h1>🔥 FF Stylish Name Maker</h1>
+<p>Free Fire Stylish Fonts - Google pe #1</p>
+<input type="text" id="nameInput" placeholder="Apna naam likho... (ex: Mahendra)" onkeyup="generateNames()">
+
+<div id="result"></div>
+
+<script>
+const styles = [
+  (t)=>`꧁༒☬${t}☬༒꧂`,
+  (t)=>`『${t}』`,
+  (t)=>`亗 ${t} 亗`,
+  (t)=>`MR°${t}࿐`,
+  (t)=>`༒${t}༒`,
+  (t)=>`꧁${t}꧂`,
+  (t)=>`${t}⚔️`,
+  (t)=>`${t}义`,
+  (t)=>`◥${t}◤`,
+  (t)=>`☠️ ${t} ☠️`,
+  (t)=>`★彡${t}彡★`,
+  (t)=>`ᴹᴿ°${t}°`
+];
+
+function generateNames(){
+  let name = document.getElementById('nameInput').value;
+  if(name.trim() == "") name = "FF Lover";
+  let html = "";
+  styles.forEach(s=>{
+    let stylish = s(name);
+    html += `<div class="box" onclick="copyText('${stylish}')">${stylish}</div>`;
+  });
+  document.getElementById('result').innerHTML = html;
+}
+
+function copyText(text){
+  navigator.clipboard.writeText(text);
+  alert("Copy ho gaya: " + text);
+}
+
+// pehli baar load pe chalao
+generateNames();
+</script>
+</body>
+</html>
