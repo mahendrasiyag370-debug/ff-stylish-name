@@ -133,3 +133,45 @@ function generateFonts(text){
  fonts.push(`☠ ${base} ☠`);
  fonts.push(`💀 ${base} 💀`);
  for(let i=0;i<15;i++){ fonts.push(`꧁
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FF Stylish Name Generator - 100+ Fonts</title>
+<style>
+body{background:#0e0e0e;color:#fff;font-family:system-ui;text-align:center;padding:12px}
+h1{color:#ffcc00}
+input{width:95%;max-width:500px;padding:14px;border-radius:10px;border:2px solid #ffcc00;font-size:18px;background:#1e1e1e;color:#fff;margin:15px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:900px;margin:auto}
+.box{background:#222;padding:12px;border-radius:10px;border:1px solid #333;font-size:17px;cursor:pointer;word-break:break-all}
+.box:active{background:#ffcc00;color:#000}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<h1>🔥 FF Name - 100+ Styles</h1>
+<p>Tap to Copy</p>
+<input id="inp" placeholder="Name likho... ex: Mahendra" oninput="make()" value="Mahendra">
+<div class="grid" id="out"></div>
+<script>
+function make(){
+ let n=document.getElementById('inp').value||"FF";
+ let s=["꧁༒☬","☬༒꧂","꧁","꧂","༺","༻","『","』","◥","◤","亗","༒","★","彡","☆","⚔","☠","♛","乂","乡","×͜×","ᴹᴿ","࿐","⚡","🔥","💀","👑","卐","么","×","・","ッ","气","廴","刁","ʚ","ɞ","๛","๖","۝","༊","Ꮗ","Ꮇ","Ꮶ","Ꭵ","Ꮑ","Ꮪ","Ꮆ","ꀘ","ꁲ"];
+ let styles=[];
+ styles.push(`꧁༒☬${n}☬༒꧂`); styles.push(`『${n}』`); styles.push(`亗 ${n} 亗`); styles.push(`MR°${n}࿐`);
+ styles.push(`༒${n}༒`); styles.push(`꧁${n}꧂`); styles.push(`◥${n}◤`); styles.push(`★彡${n}彡★`);
+ styles.push(`☠ ${n} ☠`); styles.push(`💀 ${n} 💀`); styles.push(`👑 ${n} 👑`); styles.push(`⚔ ${n} ⚔`);
+ // 100+
+ for(let i=0;i<120;i++){
+   let a=s[i%s.length]; let b=s[(i+5)%s.length];
+   styles.push(`${a}${n}${b}`); styles.push(`${a} ${n} ${b}`); styles.push(`꧁${a}${n}${b}꧂`);
+   if(styles.length>110) break;
+ }
+ let uniq=[...new Set(styles)].slice(0,110);
+ document.getElementById('out').innerHTML=uniq.map((t,i)=>`<div class=box onclick="navigator.clipboard.writeText(this.innerText.slice(3));this.style.background='#ffcc00';setTimeout(()=>this.style.background='#222',400)">${i+1}. ${t}</div>`).join('');
+}
+make();
+</script>
+</body>
+</html>
